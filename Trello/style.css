@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #e5e5e5;
+  display: flex;
+  padding-top: 5rem;
+  justify-content: center;
+  overflow: hidden;
+  margin: 0;
+}
+
+.row {
+  display: flex;
+  width: 1000px;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.col-header {
+  width: 200px;
+  box-shadow: 4px 4px 9px rgba(198, 198, 198, 0.36);
+  border-radius: 20px;
+  padding: 0.8rem 1rem;
+  color: #fff;
+  position: relative;
+  overflow-x: hidden;
+  text-align: center;
+}
+
+.col-header .flare {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 45px;
+  transform: skewX(-45deg); 
+  animation: flareAnimation;
+  left: -150%;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.4));
+  animation: flareAnimation 3s infinite linear; 
+}
+
+@keyframes flareAnimation {
+  0% {
+      left: -150%;
+  }
+  100% {
+      left: 150%;
+  }
+}
+
+.item {
+  width: 150px;
+  height: 66px;
+  border: none;
+  /* box-shadow: 4px 4px 9px rgba(198, 198, 198, 0.36); */
+  border-radius: 20px;
+  background: #f7f6f7;
+  padding: 0.8rem 1rem;
+  color: #828282;
+  text-align: center;
+  cursor: grabbing;
+  overflow: hidden;
+  display: block;
+}
+
+.item:active {
+  cursor: grabbing; 
+}
+ 
+.placeholder {
+  width: 200px;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.start {
+  background: linear-gradient(90deg, #ff85e4 0%, #229efd 179.25%);
+}
+
+.progress {
+  background: linear-gradient(90deg, #209cff 0%, #68e0cf 100%);
+}
+
+.done {
+  background: linear-gradient(90deg, #84fab0 0%, #8fd3f4 100%);
+}
+
+.hold{
+  background: #e281e2;
+}
+.hide{
+  display: none;
+}
+
+.hovered {
+  border-radius: 20px;
+  box-shadow: -3px 3px 100px 100px rgba(93, 159, 210, 0.09) inset;
+  transition: box-shadow 300ms ease-in-out;
+}
+
+ @keyframes pulsate {
+  50% { color: rgb(104, 238, 15); text-shadow: 0 -1px rgba(0,0,0,.3), 0 0 5px rgb(231, 231, 98), 0 0 8px rgb(23, 83, 8); }
+ }
+ .dropped {
+   color: #828282;
+   text-shadow: 0 -1px rgba(0,0,0,.1);
+   animation: pulsate 1.2s linear infinite;
+ }
